@@ -9,15 +9,15 @@ RUN apt-get update && apt-get install -y \
 
 RUN a2enmod rewrite
 
-# Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 COPY . /var/www/html/
 
-WORKDIR /var/www/html
+WORKDIR /var/www/html/app
 
-# Install dependencies
 RUN composer install --no-dev --optimize-autoloader
+
+WORKDIR /var/www/html
 
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
