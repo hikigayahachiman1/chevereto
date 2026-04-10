@@ -3,9 +3,10 @@ FROM php:8.2-apache
 RUN apt-get update && apt-get install -y \
     libpng-dev libjpeg-dev libwebp-dev \
     libfreetype6-dev libzip-dev unzip curl git \
+    libicu-dev \
     && docker-php-ext-configure gd \
     --with-freetype --with-jpeg --with-webp \
-    && docker-php-ext-install gd pdo pdo_mysql zip exif opcache
+    && docker-php-ext-install gd pdo pdo_mysql zip exif opcache intl
 
 RUN a2enmod rewrite
 
