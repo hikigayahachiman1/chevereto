@@ -22,5 +22,8 @@ WORKDIR /var/www/html
 
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
+# Force MySQL SSL untuk Aiven
+RUN echo "extension=pdo_mysql" >> /usr/local/etc/php/conf.d/custom.ini && \
+    echo "mysqli.ssl_ca=/etc/ssl/certs/ca-certificates.crt" >> /usr/local/etc/php/conf.d/custom.ini    
 
 EXPOSE 80
