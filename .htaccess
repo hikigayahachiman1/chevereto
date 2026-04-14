@@ -10,8 +10,6 @@ Options -MultiViews
 </FilesMatch>
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    # Redirect homepage to login
-	RewriteRule ^$ /login [R=302,L]
     # If you have problems with the rewrite rules remove the "#" from the following RewriteBase line
     # You will also have to change the path to reflect the path to your Chevereto installation
     # If you are using mod alias is likely that you will need this.
