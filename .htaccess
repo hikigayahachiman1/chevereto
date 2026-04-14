@@ -7,10 +7,6 @@ Options -MultiViews
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Blokir akses langsung, paksa ke img.pasticuan.me
-    RewriteCond %{HTTP_HOST} !^img\.pasticuan\.me$ [NC]
-    RewriteRule ^ https://img.pasticuan.me%{REQUEST_URI} [R=301,L]
-
     # Redirect homepage to login
     RewriteRule ^$ /login [R=302,L]
 
