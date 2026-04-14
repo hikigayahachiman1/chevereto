@@ -17,7 +17,7 @@ Options -MultiViews
     # PHP front controller
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . index.php [L]
+    RewriteRule ^(.*)$ index.php [QSA,L]
 
     # Single PHP-entrypoint
     RewriteCond %{THE_REQUEST} ^.+?\ [^?]+\.php[?\ ] [NC]
