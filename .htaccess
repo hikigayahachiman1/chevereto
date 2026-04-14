@@ -27,5 +27,7 @@ Options -MultiViews
     # Single PHP-entrypoint
     RewriteCond %{THE_REQUEST} ^.+?\ [^?]+\.php[?\ ] [NC]
     RewriteRule \.php$ - [NC,L,F,R=404]
+RewriteCond %{HTTP_HOST} !^img\.pasticuan\.me$ [NC]
+RewriteRule ^ https://img.pasticuan.me%{REQUEST_URI} [R=301,L]
 </IfModule>
 
