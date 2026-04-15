@@ -835,7 +835,7 @@ return function (Handler $handler) {
                             }
                             $cover_index = get()['cover'] - 1;
                             $homecovers = getSetting('homepage_cover_images');
-                            $cover_target = $homecovers[$cover_index];
+                            $cover_target = $homecovers[$cover_index] ?? null;
                             if (! is_integer(get()['cover']) || ! isset($cover_target)) {
                                 $is_error = true;
                                 $error_message = _s('Request denied');
